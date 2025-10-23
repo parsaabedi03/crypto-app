@@ -1,0 +1,46 @@
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 10px 0;
+}
+.table thead tr {
+  border-bottom: 2px solid #e5e7eb;
+}
+.table th {
+  text-align: left;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 10px 0;
+}
+.table tbody tr:not(:last-child) {
+  border-bottom: 2px solid #2f2c2c;
+}
+.table tr td {
+  padding: 10px 0;
+  font-size: 1rem;
+  font-weight: 700;
+}
+.coin {
+  place-content: center;
+}
+.coin img {
+  height: 25px;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+.coin span {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #c0c1c3;
+  vertical-align: middle;
+}
+
+.green {
+  color: #22c55e;
+}
+.red {
+  color: #ef4444;
+}
+.card {
+  padding: 5px 0;
+}
