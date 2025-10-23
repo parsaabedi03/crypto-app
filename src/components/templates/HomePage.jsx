@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 import TableCoin from "../modules/TableCoin";
 import { getCoinList } from "../../services/cryptoApi";
-import SesrchBar from "../modules/SesrchBar";
+import SearchBar from "../modules/SearchBar";
 import Pagination from "../modules/Pagination";
 
 function HomePage() {
@@ -22,7 +22,7 @@ function HomePage() {
 
   return (
     <div>
-      <SesrchBar currency={currency} setCurrency={setCurrency} />
+      <SearchBar currency={currency} setCurrency={setCurrency} />
       <TableCoin coins={coins} currency={currency} />
       <Pagination paginate={paginate} setPaginate={setPaginate} />
     </div>
