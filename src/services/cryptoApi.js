@@ -10,4 +10,13 @@ const getCoinList = (currency, paginate) => {
   return { url, options };
 };
 
-export { getCoinList };
+const searchCoinList = (search) => {
+  const url = `${BASE_URL}/search?query=${search}`;
+  const options = {
+    method: "GET",
+    headers: { "x-cg-demo-api-key": API_KEY },
+  };
+  return { url, options };
+};
+
+export { getCoinList, searchCoinList };
