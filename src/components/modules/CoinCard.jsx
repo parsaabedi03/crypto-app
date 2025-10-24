@@ -27,15 +27,15 @@ function CoinCard({ data, currency }) {
       </td>
       <td>{name}</td>
       <td>
-        {icon[currency]} {current_price.toLocaleString()}
+        {icon[currency]} {current_price?.toLocaleString()}
       </td>
       <td
         className={0 <= price_change_percentage_24h ? styles.green : styles.red}
       >
-        {price_change_percentage_24h.toFixed(2)} %
+        {price_change_percentage_24h?.toFixed(2)} %
       </td>
       <td>
-        {icon[currency]} {total_volume.toLocaleString()}
+        {icon[currency]} {total_volume?.toLocaleString()}
       </td>
       <td>
         <img
