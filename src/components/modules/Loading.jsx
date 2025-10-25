@@ -1,7 +1,7 @@
+import styles from "./Loading.module.css";
+
 function Loading() {
-  return (
-    <div>Loading</div>
-  )
+  return <div className={styles.loader}></div>;
 }
 
-export default Loading
+export default Loading;
