@@ -3,6 +3,7 @@ import { searchCoinList } from "../../services/cryptoApi";
 
 import styles from "./SearchBar.module.css";
 import SearchCoinCard from "./SearchCoinCard";
+import Loading from "./Loading";
 
 function SesrchBar({ currency, setCurrency }) {
   const [searchCoins, setSearchCoins] = useState([]);
@@ -14,6 +15,7 @@ function SesrchBar({ currency, setCurrency }) {
       setShow(false);
       return;
     }
+    setShow(true);
 
     try {
       const searchCoins = async () => {
@@ -21,7 +23,6 @@ function SesrchBar({ currency, setCurrency }) {
         const response = await fetch(url, options);
         const json = await response.json();
         setSearchCoins(json.coins);
-        setShow(true);
       };
       searchCoins();
     } catch (error) {
@@ -39,12 +40,12 @@ function SesrchBar({ currency, setCurrency }) {
         <input type="text" placeholder="Search ..." onChange={handleSearch} />
         {show && (
           <div>
-            {searchCoins.length > 0 ? (
+            {!searchCoins.length ? (
+              <Loading />
+            ) : (
               searchCoins.map((coin) => (
                 <SearchCoinCard key={coin.id} coin={coin} />
               ))
-            ) : (
-              <p>There is nothing to show</p>
             )}
           </div>
         )}
