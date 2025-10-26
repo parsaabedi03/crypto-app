@@ -3,7 +3,7 @@ import styles from "./TableCoin.module.css";
 import churtUp from "../../assets/chart-up.svg";
 import churtDown from "../../assets/chart-down.svg";
 
-function CoinCard({ data, currency }) {
+function CoinCard({ data, currency, handleModal }) {
   const {
     image,
     symbol,
@@ -23,7 +23,13 @@ function CoinCard({ data, currency }) {
     <tr className={styles.card}>
       <td className={styles.coin}>
         <img src={image} alt={name} />
-        <span>{symbol.toUpperCase()}</span>
+        <button
+          onClick={() =>
+            handleModal(data)
+          }
+        >
+          {symbol.toUpperCase()}
+        </button>
       </td>
       <td>{name}</td>
       <td>
