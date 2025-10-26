@@ -21,11 +21,10 @@ const searchCoinList = (search) => {
 
 const getChartData = (id) => {
   const now = Math.floor(Date.now() / 1000);
-  const oneYearAgo = Math.floor(
-    (Date.now() - 365 * 24 * 60 * 60 * 1000) / 1000
+  const fiveDaysAgo = Math.floor(
+    (Date.now() - 5 * 24 * 60 * 60 * 1000) / 1000
   );
-  console.log({now,oneYearAgo})
-  const url = `${BASE_URL}/coins/${id}/market_chart/range?vs_currency=usd&from=${oneYearAgo}&to=${now}`;
+  const url = `${BASE_URL}/coins/${id}/market_chart/range?vs_currency=usd&from=${fiveDaysAgo}&to=${now}&precision=3`;
   const options = {
     method: "GET",
     headers: { "x-cg-demo-api-key": API_KEY },
