@@ -1,16 +1,63 @@
-# React + Vite
+# Crypto App 💹
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern cryptocurrency dashboard built with **React** and **Recharts**, providing live market data visualization for prices, market caps, and trading volumes.
 
-Currently, two official plugins are available:
+## 🚀 Features
+- Real-time crypto data fetched from an external API
+- Dynamic chart rendering with Recharts
+- Interactive metric selection (Prices, Market Caps, Total Volumes)
+- Responsive modal for coin details
+- Clean and modular architecture with `services` and `utils` layers
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🛠️ Tech Stack
+- **React 18**
+- **Vite**
+- **Recharts**
+- **CSS Modules**
+- **CoinGecko API** (for market data)
 
-## React Compiler
+## 📦 Folder Structure
+```
+src/
+├── components/
+│   ├── ModalChart/
+│   └── Chart/
+├── services/        # API requests (cryptoApi.js)
+├── utils/           # Data formatting helpers
+├── App.jsx
+└── main.jsx
+```
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## ⚙️ Installation
+```bash
+# Clone the repository
+git clone https://github.com/parsaabedi03/crypto-app.git
 
-## Expanding the ESLint configuration
+# Navigate into the project directory
+cd crypto-app
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+```
+
+## 📊 Usage
+1. Select a cryptocurrency to view details.
+2. Open modal to see interactive charts.
+3. Toggle between **Prices**, **Market Caps**, and **Total Volumes**.
+
+## 🧠 Future Improvements
+- Add dark/light mode toggle
+- Improve performance with React Query or SWR
+- Add portfolio tracking feature
+- Integrate user authentication
+
+## 👤 Author
+**Parsa Abedi**  
+📧 [GitHub Profile](https://github.com/parsaabedi03)
+
+---
+
+⭐ **If you like this project, please give it a star on GitHub!**
