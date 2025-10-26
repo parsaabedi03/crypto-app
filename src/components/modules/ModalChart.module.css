@@ -1,0 +1,83 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(2px);
+  background-blend-mode: overlay;
+}
+
+.modal {
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(8px);
+  background-blend-mode: overlay;
+  border-radius: 20px;
+  border: 2px solid #e5e7eb;
+}
+
+.detail {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.detail img {
+  width: 35px;
+  margin-right: 10px;
+}
+.detail p {
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 700;
+}
+.coinStats {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.coinStats p {
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 500;
+}
+.coinStats p span {
+  color: #2563eb;
+  font-weight: 700;
+}
+.modal button {
+  outline: none;
+  color: #2563eb;
+  padding: 5px 10px;
+  background-color: transparent;
+  border: 1px solid #2563eb;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 30px 20px 30px 0;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.1s ease-in;
+}
+.modal button.selected {
+  background-color: #2563eb;
+  color: #ffffff;
+}
+.close {
+  outline: none;
+  border: none;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background-color: red;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
