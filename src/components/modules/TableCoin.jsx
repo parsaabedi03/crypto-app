@@ -3,7 +3,7 @@ import Loading from "./Loading";
 
 import styles from "./TableCoin.module.css";
 
-function TableCoin({ coins, currency }) {
+function TableCoin({ coins, currency, handleModal }) {
   return (
     <table className={styles.table}>
       <thead>
@@ -24,7 +24,12 @@ function TableCoin({ coins, currency }) {
           </tr>
         )}
         {coins.map((coin) => (
-          <CoinCard key={coin.id} data={coin} currency={currency} />
+          <CoinCard
+            key={coin.id}
+            data={coin}
+            currency={currency}
+            handleModal={handleModal}
+          />
         ))}
       </tbody>
     </table>

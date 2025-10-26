@@ -20,18 +20,25 @@
   font-size: 1rem;
   font-weight: 700;
 }
+.table tr td button {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #c0c1c3;
+  vertical-align: middle;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.table tr td button:hover {
+  color: #ffffff;
+}
 .coin {
   place-content: center;
 }
 .coin img {
   height: 25px;
   margin-right: 10px;
-  vertical-align: middle;
-}
-.coin span {
-  font-size: 1rem;
-  font-weight: 700;
-  color: #c0c1c3;
   vertical-align: middle;
 }
 
