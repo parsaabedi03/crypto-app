@@ -14,12 +14,12 @@ function Chart({ data, metric }) {
     market_caps: "Market Caps",
     total_volumes: "Total Volumes",
   };
-  
+
   return (
     <ResponsiveContainer width={700} height={300}>
       <LineChart data={data} margin={{ top: 5, right: 10, left: 0, bottom: 5 }}>
         <CartesianGrid strokeDasharray="3 3" />
-        <YAxis />
+        <YAxis domain={["auto", "auto"]} />
         <Tooltip />
         <Legend />
         <Line
