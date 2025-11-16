@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { searchCoinList } from "../../services/cryptoApi";
 
 import styles from "./SearchBar.module.css";
@@ -6,29 +6,42 @@ import SearchCoinCard from "./SearchCoinCard";
 import Loading from "./Loading";
 
 function SesrchBar({ currency, setCurrency }) {
+  const [query, setQuery] = useState("");
   const [searchCoins, setSearchCoins] = useState([]);
   const [show, setShow] = useState(false);
 
-  const handleSearch = (event) => {
-    const value = event.target.value.toLowerCase().trim();
-    if (!value) {
+  useEffect(() => {
+    if (!query) {
       setShow(false);
       return;
     }
-    setShow(true);
 
-    try {
-      const searchCoins = async () => {
-        const { url, options } = searchCoinList(value);
-        const response = await fetch(url, options);
+    const controller = new AbortController();
+
+    const fetchData = async () => {
+      try {
+        const { url, options } = searchCoinList(query);
+        const response = await fetch(url, {
+          ...options,
+          signal: controller.signal,
+        });
         const json = await response.json();
         setSearchCoins(json.coins);
-      };
-      searchCoins();
-    } catch (error) {
-      console.log(error);
-    }
+        setShow(true);
+      } catch (err) {
+        if (err.name !== "AbortError") console.log(err);
+      }
+    };
+
+    fetchData();
+
+    return () => controller.abort();
+  }, [query]);
+
+  const handleSearch = (e) => {
+    setQuery(e.target.value.toLowerCase().trim());
   };
+  
   const handleCurrency = (event) => {
     const value = event.target.value;
     setCurrency(value);
